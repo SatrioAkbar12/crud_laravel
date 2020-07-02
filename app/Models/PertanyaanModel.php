@@ -28,6 +28,18 @@ class PertanyaanModel {
 
         return $new_insert;
     }
+
+    public static function insert_seed(){
+        $timestamp = date('Y-m-d H:i:s', time());
+        $insert = DB::table('pertanyaan')->insert([
+            'judul'=>'Ini adalah judul pertanyaan',
+            'isi'=>'Ini adalah isi dari pertanyaan',
+            'created_at'=>$timestamp,
+            'updated_at'=>$timestamp
+        ]);
+
+        return $insert;
+    }
 }
 
 ?>

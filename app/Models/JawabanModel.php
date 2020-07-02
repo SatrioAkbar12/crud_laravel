@@ -22,4 +22,19 @@ class JawabanModel{
 
         return $new_insert;
     }
+
+    public static function insert_seed(){
+        $jumlah_pertanyaan = DB::table('pertanyaan')->count();
+
+        for ($i=1; $i <= $jumlah_pertanyaan; $i++) {
+            $timestamp = date('Y-m-d H:i:s', time());
+            $new_insert = DB::table('jawaban')->insert([
+                'id_pertanyaan'=>$i,
+                'isi'=>'Ini adalah isi jawaban',
+                'created_at'=>$timestamp,
+                'updated_at'=>$timestamp
+            ]);
+        }
+
+    }
 }
