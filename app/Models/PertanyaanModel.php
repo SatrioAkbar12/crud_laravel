@@ -40,6 +40,23 @@ class PertanyaanModel {
 
         return $insert;
     }
+
+    public static function update($data){
+        $timestamp = date('Y-m-d H:i:s', time());
+        $update = DB::table('pertanyaan')->where('id', $data->id)->update([
+            'judul' => $data->judul,
+            'isi' => $data->isi,
+            'updated_at' => $timestamp
+        ]);
+
+        return $update;
+    }
+
+    public static function delete($id){
+        $delete = DB::table('pertanyaan')->where('id', $id)->delete();
+
+        return $delete;
+    }
 }
 
 ?>

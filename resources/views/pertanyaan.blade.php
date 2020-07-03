@@ -17,10 +17,14 @@
 
             @foreach ($data as $d)
                 <ul class="list-group">
-                    <li class="list-group-item">{{$d->judul}}</li>
-                    <li class="list-group-item">{{$d->isi}}</li>
-                    <li class="list-group-item">
-                        <a class="btn btn-primary" href="/jawaban/{{$d->id}}">Jawaban</a>
+                    <li class="list-group-item list-group-item-info"><strong>{{$d->judul}}</strong></li>
+                    <li class="list-group-item">{{$d->isi}}{{--</li>
+                    <li class="list-group-item">--}}
+                        <div class="d-flex justify-content-end">
+                            <a class="btn btn-info" href="/pertanyaan/{{$d->id}}">Lihat Selengkapnya</a>
+                            &nbsp;&nbsp;
+                            <a class="btn btn-warning" href="/jawaban/{{$d->id}}">Jawaban</a>
+                        </div>
                     </li>
                 </ul>
                 &nbsp;

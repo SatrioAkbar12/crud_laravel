@@ -17,7 +17,7 @@
 
             <ul class="list-group">
                 @foreach ($pertanyaan as $p)
-                <li class="list-group-item active">
+                <li class="list-group-item list-group-item-primary">
                     <h4>{{$p->judul}}</h4>
                 </li>
                 <li class="list-group-item">
@@ -49,6 +49,8 @@
                     </ul>
                 </li>
             </ul>
+            &nbsp;
+            &nbsp;
         </div>
     </body>
 </html>

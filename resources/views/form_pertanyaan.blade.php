@@ -9,19 +9,21 @@
     </head>
     <body>
         <div class="container">
-            <h1>Buat Pertanyaan Baru</h1>
-
+            <div class="jumbotron">
+                <h1>Buat Pertanyaan Baru</h1>
+            </div>
             <form action="/pertanyaan" method="POST">
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="form-judul">Judul Pertanyaan :</label>
-                    <input type="text" id="form-judul" name="judul" class="form-control" placeholder="Isi Judul Pertanyaan">
+                    <input type="text" id="form-judul" name="judul" class="form-control" placeholder="Isi Judul Pertanyaan" required>
                 </div>
                 <div class="form-group">
                     <label for="form-isi">Isi Pertanyaan :</label>
-                    <textarea class="form-control" id="form-isi" name="isi" placeholder="Isi Pertanyaan"></textarea>
+                    <textarea class="form-control" id="form-isi" name="isi" placeholder="Isi Pertanyaan" required></textarea>
                 </div>
                 <input type="submit" class="btn btn-success" value="Simpan">
+                <a href="/pertanyaan" class="btn btn-danger">Batal</a>
             </form>
         </div>
     </body>

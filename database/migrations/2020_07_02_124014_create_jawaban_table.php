@@ -16,6 +16,7 @@ class CreateJawabanTable extends Migration
         Schema::create('jawaban', function (Blueprint $table) {
             $table->id();
             $table->integer('id_pertanyaan');
+            $table->integer('id_akun')->nullable();
             $table->text('isi');
             $table->timestamps();
             $table->integer('like')->nullable();
